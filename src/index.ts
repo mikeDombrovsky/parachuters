@@ -3,6 +3,7 @@ import { Plane } from "./models/Plane.js";
 import { Stats } from "./models/Stats.js";
 import { CanvasView } from "./views/CanvasView.js";
 import { GameController } from "./controllers/GameController.js";
+import { Background } from "./models/Background.js";
 
 const canvas = document.getElementById("canvas") as HTMLCanvasElement;
 canvas.width = window.innerWidth;
@@ -11,8 +12,9 @@ canvas.height = window.innerHeight;
 const player = new Player(canvas);
 const plane = new Plane(canvas);
 const stats = new Stats();
+const background = new Background();
 const view = new CanvasView(canvas);
-const gameController = new GameController(player, plane, stats, view, canvas);
+const gameController = new GameController(player, plane, stats, background, view, canvas);
 
 
 

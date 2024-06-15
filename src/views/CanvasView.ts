@@ -2,9 +2,11 @@ import { Player } from "../models/Player.js";
 import { Plane } from "../models/Plane.js";
 import { Parachuter } from "../models/Parachuter.js";
 import { Stats } from "../models/Stats.js";
+import { Background } from "../models/Background.js";
 
 export class CanvasView {
   private context: CanvasRenderingContext2D;
+
 
   constructor(private canvas: HTMLCanvasElement) {
     this.context = canvas.getContext("2d") as CanvasRenderingContext2D;
@@ -61,24 +63,23 @@ export class CanvasView {
     );
   }
 
-  drawBackground() {
-    const bgImage = new Image();
-    bgImage.src = "../assets/img/background.png";
-    this.context.drawImage(
-      bgImage,
-      0,
-      0,
-      this.canvas.width,
-      this.canvas.height
-    );
-    const seaImage = new Image();
-    seaImage.src = "../assets/img/sea.png";
-    this.context.drawImage(
-      seaImage,
-      0,
-      this.canvas.height - seaImage.height,
-      this.canvas.width,
-      seaImage.height
-    );
+  drawBackground(background: Background) {
+    if (background.bgImage && background.seaImage) {
+      this.context.drawImage(
+        background.bgImage,
+        0,
+        0,
+        this.canvas.width,
+        this.canvas.height
+      );
+      
+      this.context.drawImage(
+        background.seaImage,
+        0,
+        this.canvas.height - background.seaImage.height,
+        this.canvas.width,
+        background.seaImage.height
+      );
+    }
   }
 }

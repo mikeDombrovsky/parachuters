@@ -3,6 +3,7 @@ import { Plane } from "../models/Plane.js";
 import { Parachuter } from "../models/Parachuter.js";
 import { Stats } from "../models/Stats.js";
 import { CanvasView } from "../views/CanvasView.js";
+import { Background } from "../models/Background.js";
 
 export class GameController {
   private isRunning: boolean = true;
@@ -13,12 +14,14 @@ export class GameController {
     private player: Player,
     private plane: Plane,
     private stats: Stats,
+    private background: Background,
     private view: CanvasView,
     private canvas: HTMLCanvasElement
   ) {
     this.player = player;
     this.plane = plane;
     this.stats = stats;
+    this.background = background;
     this.view = view;
     this.canvas = canvas;
   }
@@ -40,7 +43,7 @@ export class GameController {
     requestAnimationFrame(() => this.animate());
 
     this.view.clear();
-    this.view.drawBackground();
+    this.view.drawBackground(this.background);
     this.player.update();
     this.plane.update();
 
