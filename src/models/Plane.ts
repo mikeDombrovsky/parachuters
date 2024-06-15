@@ -6,9 +6,11 @@ export class Plane {
   image?: HTMLImageElement;
   width: number = 0;
   height: number = 0;
+  canvas: HTMLCanvasElement;
 
   constructor(canvas: HTMLCanvasElement) {
     this.velocity = { x: -1, y: 0 };
+    this.canvas = canvas;
 
     const image = new Image();
     image.src = "./assets/img/plane.png";
@@ -26,7 +28,7 @@ export class Plane {
 
   update() {
     if (this.position.x === 0 - this.width) {
-      this.position.x = canvas.width;
+      this.position.x = this.canvas.width;
     } else {
       this.position.x += this.velocity.x;
     }
