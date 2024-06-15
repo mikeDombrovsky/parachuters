@@ -16,47 +16,47 @@ const gameController = new GameController(player, plane, stats, view, canvas);
 
 
 
-// const keys = {
-//   a: { pressed: false },
-//   d: { pressed: false },
-//   arrowLeft: { pressed: false },
-//   arrowRight: { pressed: false },
-// };
+const keys = {
+  a: { pressed: false },
+  d: { pressed: false },
+  arrowLeft: { pressed: false },
+  arrowRight: { pressed: false },
+};
 
-// addEventListener("keydown", ({ key }) => {
-//   switch (key) {
-//     case "a":
-//       keys.a.pressed = true;
-//       break;
-//     case "ArrowLeft":
-//       keys.arrowLeft.pressed = true;
-//       break;
-//     case "d":
-//       keys.d.pressed = true;
-//       break;
-//     case "ArrowRight":
-//       keys.arrowRight.pressed = true;
-//       break;
-//     case "Enter":
-//       gameController.startAgain();
-//   }
-// });
+addEventListener("keydown", ({ key }) => {
+  switch (key) {
+    case "a":
+      keys.a.pressed = true;
+      break;
+    case "ArrowLeft":
+      keys.arrowLeft.pressed = true;
+      break;
+    case "d":
+      keys.d.pressed = true;
+      break;
+    case "ArrowRight":
+      keys.arrowRight.pressed = true;
+      break;
+    case "Enter":
+      gameController.startAgain();
+  }
+});
 
-// addEventListener("keyup", ({ key }) => {
-//   switch (key) {
-//     case "a":
-//       keys.a.pressed = false;
-//       break;
-//     case "ArrowLeft":
-//       keys.arrowLeft.pressed = false;
-//       break;
-//     case "d":
-//       keys.d.pressed = false;
-//       break;
-//     case "ArrowRight":
-//       keys.arrowRight.pressed = false;
-//       break;
-//   }
-// });
+addEventListener("keyup", ({ key }) => {
+  switch (key) {
+    case "a":
+      keys.a.pressed = false;
+      break;
+    case "ArrowLeft":
+      keys.arrowLeft.pressed = false;
+      break;
+    case "d":
+      keys.d.pressed = false;
+      break;
+    case "ArrowRight":
+      keys.arrowRight.pressed = false;
+      break;
+  }
+});
 
 gameController.startGame();

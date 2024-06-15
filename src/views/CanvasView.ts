@@ -63,7 +63,7 @@ export class CanvasView {
 
   drawBackground() {
     const bgImage = new Image();
-    bgImage.src = "./assets/img/background.png";
+    bgImage.src = "../assets/img/background.png";
     this.context.drawImage(
       bgImage,
       0,
@@ -72,7 +72,7 @@ export class CanvasView {
       this.canvas.height
     );
     const seaImage = new Image();
-    seaImage.src = "./assets/img/sea.png";
+    seaImage.src = "../assets/img/sea.png";
     this.context.drawImage(
       seaImage,
       0,

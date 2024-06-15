@@ -82,7 +82,6 @@ export class GameController {
   }
 
   private dropParachuters(width: number, plane: Plane): number {
-    
     return setInterval(() => {
       const x = defind_x_within_canvas();
 
@@ -97,7 +96,6 @@ export class GameController {
       );
 
       function defind_x_within_canvas() {
-
         return plane.position.x < 0
           ? plane.position.x + plane.width
           : plane.position.x > width - plane.width

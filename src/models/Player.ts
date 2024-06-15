@@ -11,7 +11,7 @@ export class Player {
     this.velocity = { x: 0, y: 0 };
     
     const image = new Image();
-    image.src = "./assets/img/boat.png";
+    image.src = "../assets/img/boat.png";
 
     image.onload = () => {
       this.image = image;

@@ -17,7 +17,7 @@ export class Parachuter {
     this.velocity = velocity;
 
     const image = new Image();
-    image.src = "./assets/img/parachutist.png";
+    image.src = "../assets/img/parachutist.png";
 
     image.onload = () => {
       this.image = image;

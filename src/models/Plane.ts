@@ -13,7 +13,7 @@ export class Plane {
     this.canvas = canvas;
 
     const image = new Image();
-    image.src = "./assets/img/plane.png";
+    image.src = "../assets/img/plane.png";
 
     image.onload = () => {
       this.image = image;
