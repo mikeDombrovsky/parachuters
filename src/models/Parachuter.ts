@@ -1,4 +1,4 @@
-import { Position, Velocity } from "./types";
+import { Position, Velocity } from "./types.js";
 
 interface ParachuterProps {
   position: Position;

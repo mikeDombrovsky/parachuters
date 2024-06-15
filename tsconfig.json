@@ -2,10 +2,6 @@
     "compilerOptions": {
         "target": "ES6",
         "sourceMap": true,
-        // "lib": [
-        //     "ES2020",
-        //     "DOM"
-        // ],
         "noUnusedLocals": true,
         "module": "ES6",
         "rootDir": "./src",

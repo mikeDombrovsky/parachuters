@@ -1,8 +1,8 @@
-import { Player } from "../models/Player";
-import { Plane } from "../models/Plane";
-import { Parachuter } from "../models/Parachuter";
-import { Stats } from "../models/Stats";
-import { CanvasView } from "../views/CanvasView";
+import { Player } from "../models/Player.js";
+import { Plane } from "../models/Plane.js";
+import { Parachuter } from "../models/Parachuter.js";
+import { Stats } from "../models/Stats.js";
+import { CanvasView } from "../views/CanvasView.js";
 
 export class GameController {
   private isRunning: boolean = true;
@@ -24,7 +24,7 @@ export class GameController {
   }
 
   startGame() {
-    this.intervalId = this.dropParachuters();
+    this.intervalId = this.dropParachuters(this.canvas.width, this.plane);
     this.animate();
   }
 
@@ -34,8 +34,8 @@ export class GameController {
   }
 
   private animate() {
-    if (!this.isRunning) return;
-    if(this.stats.lives === 0) this.stopGame()
+    // if (!this.isRunning) return;
+    if (this.stats.lives === 0) this.stopGame();
 
     requestAnimationFrame(() => this.animate());
 
@@ -81,7 +81,8 @@ export class GameController {
     }
   }
 
-  private dropParachuters(): number {
+  private dropParachuters(width: number, plane: Plane): number {
+    
     return setInterval(() => {
       const x = defind_x_within_canvas();
 
@@ -96,11 +97,12 @@ export class GameController {
       );
 
       function defind_x_within_canvas() {
-        return this.plane.position.x < 0
-          ? this.plane.position.x + this.plane.width
-          : this.plane.position.x > this.canvas.width - this.plane.width
-          ? this.plane.position.x - this.plane.width
-          : this.plane.position.x;
+
+        return plane.position.x < 0
+          ? plane.position.x + plane.width
+          : plane.position.x > width - plane.width
+          ? plane.position.x - plane.width
+          : plane.position.x;
       }
     }, Math.random() * 2000 + 500);
   }
@@ -118,10 +120,7 @@ export class GameController {
       this.stats.lives = 3;
       this.parachuters = [];
       this.isRunning = true;
-      this.intervalId = this.dropParachuters();
+      this.intervalId = this.dropParachuters(this.canvas.width, this.plane);
     }
   }
-
-
-
 }

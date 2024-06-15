@@ -1,7 +1,7 @@
-import { Player } from "../models/Player";
-import { Plane } from "../models/Plane";
-import { Parachuter } from "../models/Parachuter";
-import { Stats } from "../models/Stats";
+import { Player } from "../models/Player.js";
+import { Plane } from "../models/Plane.js";
+import { Parachuter } from "../models/Parachuter.js";
+import { Stats } from "../models/Stats.js";
 
 export class CanvasView {
   private context: CanvasRenderingContext2D;
