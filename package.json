@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc --build",
-    "start": "http-server"
+    "start": "http-server -c-1 --cors"
   },
   "author": "Michael Dombrovskis",
   "license": "ISC",
